@@ -1,7 +1,7 @@
 # Population and Education Rebalance Mod
 The goal of this mod is to rebalance population structure and education needs, to be more realistic. It will reduce the number of Children and increase the number or Teens, thus balancing the needs for Elementary and High Schools.
 
-Version 0.7 introduces a new death process. There will be more deaths! Please read the description and turn it off if you prefer the vanilla approach.
+**The mod is available on PDXMods platform.** This version will be deprecated in 2 weeks.
 
 ## Features
 

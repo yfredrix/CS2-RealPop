@@ -51,7 +51,7 @@ The mod has **many** features, most of them are **configurable**. Please see Git
 	<!--Tag, can be set multiple times-->
 	<Tag Value="Code Mod" />
 	<!--Link to the forum post where the mod can be discussed-->
-	<ForumLink Value="" />
+	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/population-rebalance.1644656/" />
 	<!--Version of the mod-->
 	<ModVersion Value="0.9.1" />
 	<!--Recommended version of the base game to use the mod-->
@@ -66,4 +66,5 @@ v0.9.0 (2024-03-24)
 	</ChangeLog>
 	<!--External link. supported types are discord, github, youtube, twitch, x, paypal, patreon-->
 	<ExternalLink Type="github" Url="https://github.com/Infixo/CS2-RealPop" />
+	<ExternalLink Type="discord" Url="https://discord.com/channels/1169011184557637825/1198628199207292929" />
 </Publish>
