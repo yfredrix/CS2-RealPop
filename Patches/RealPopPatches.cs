@@ -184,6 +184,12 @@ namespace RealPop.Patches
         {
             if (TryGetPrefab(nameof(DemandPrefab), "DemandParameters", out PrefabBase prefabBase, out Entity entity) && m_PrefabSystem.TryGetComponentData<DemandParameterData>(prefabBase, out DemandParameterData comp))
             {
+                // 240403 Compatibility with RealEco requires also ComponentBase to be changed, otherwise RealEco will overwrite the changes made here
+                DemandPrefab prefab = prefabBase as DemandPrefab;
+                prefab.m_HomelessEffect = 20f;
+                prefab.m_NeutralHappiness = 60; // vanilla is 50
+                prefab.m_NeutralUnemployment = 8.0f; // vanilla is 10
+                prefab.m_NeutralHomelessness = 1.5f; // vanilla is 2
                 comp.m_HomelessEffect = 20f; // vanilla is 0.2f which makes it virtually meaningless
                 comp.m_NeutralHappiness = 60; // vanilla is 50
                 comp.m_NeutralUnemployment = 8.0f; // vanilla is 10
@@ -201,18 +207,22 @@ namespace RealPop.Patches
             HouseholdData comp;
             if (TryGetPrefab(nameof(HouseholdPrefab), "CoupleHousehold", out prefabBase, out entity) && m_PrefabSystem.TryGetComponentData<HouseholdData>(prefabBase, out comp))
             {
+                (prefabBase as HouseholdPrefab).m_AdultCount = 2; // 240403 Compatibility with RealEco
                 comp.m_AdultCount = 2; // vanilla prefab has 1 Adult for CoupleHousehold
                 m_PrefabSystem.AddComponentData<HouseholdData>(prefabBase, comp);
                 Mod.log.Info($"Patched {prefabBase.name} for AdultCount={comp.m_AdultCount}");
             }
             if (TryGetPrefab(nameof(HouseholdPrefab), "CoupleHousehold2", out prefabBase, out entity) && m_PrefabSystem.TryGetComponentData<HouseholdData>(prefabBase, out comp))
             {
+                (prefabBase as HouseholdPrefab).m_Weight = 5; // 240403 Compatibility with RealEco
                 comp.m_Weight = 5; // vanilla = 1
                 m_PrefabSystem.AddComponentData<HouseholdData>(prefabBase, comp);
                 Mod.log.Info($"Patched {prefabBase.name} for Weight={comp.m_Weight}");
             }
             if (TryGetPrefab(nameof(HouseholdPrefab), "CoupleHousehold5", out prefabBase, out entity) && m_PrefabSystem.TryGetComponentData<HouseholdData>(prefabBase, out comp))
             {
+                (prefabBase as HouseholdPrefab).m_Weight = 7; // 240403 Compatibility with RealEco
+                (prefabBase as HouseholdPrefab).m_ChildCount = 1; // 240403 Compatibility with RealEco
                 comp.m_Weight = 7;
                 comp.m_ChildCount = 1; // vanilla is missing classic 2+1 family
                 m_PrefabSystem.AddComponentData<HouseholdData>(prefabBase, comp);
@@ -224,6 +234,7 @@ namespace RealPop.Patches
         {
             if (TryGetPrefab(nameof(HouseholdPrefab), prefabName, out PrefabBase prefabBase, out Entity entity) && m_PrefabSystem.TryGetComponentData<HouseholdData>(prefabBase, out HouseholdData comp))
             {
+                (prefabBase as HouseholdPrefab).m_InitialWealthOffset = 2500; // 240403 Compatibility with RealEco
                 comp.m_InitialWealthOffset = 2500;
                 m_PrefabSystem.AddComponentData<HouseholdData>(prefabBase, comp);
                 Mod.log.Info($"Patched {prefabBase.name} for InitialWealthOffset={comp.m_InitialWealthOffset}");

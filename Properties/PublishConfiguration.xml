@@ -53,7 +53,7 @@ The mod has **many** features, most of them are **configurable**. Please see Git
 	<!--Link to the forum post where the mod can be discussed-->
 	<ForumLink Value="https://forum.paradoxplaza.com/forum/threads/population-rebalance.1644656/" />
 	<!--Version of the mod-->
-	<ModVersion Value="0.9.1" />
+	<ModVersion Value="0.9.2" />
 	<!--Recommended version of the base game to use the mod-->
 	<GameVersion Value="1.1.*" />
 	<!--Dependency for the mod, can be set multiple times-->
@@ -61,6 +61,8 @@ The mod has **many** features, most of them are **configurable**. Please see Git
 	<!--Change log for new version. Single line or multi line. Supports minimal markdown subset-->
 	<!--<ChangeLog Value="v0.9.0 (2024-03-24) Mod ported to the official platform and updated for v1.1.0 of the game." />-->
 	<ChangeLog>
+v0.9.2 (2024-04-03)
+* Added compatibility with Economy Rebalance.
 v0.9.0 (2024-03-24)
 * Mod migrated to PDXMods platform and updated for v1.1.0 of the game.
 	</ChangeLog>
